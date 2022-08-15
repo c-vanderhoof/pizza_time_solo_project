@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Pizza</title>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <h1>Christian's Pizza Joint</h1>
+            <table>
+                <td><a href="">Account</a></td>
+                <td><a href="/logout">Logout</a></td>
+            </table>
+        </div>
+        <div>
+            <h2>Create Your Own Pizza</h2>
+            <form action="/create/pizza" method="post">
+                <div>
+                    <label for="size"> Choose your size</label>
+                    <input type="radio" name="small" value="small">Small<br>
+                    <input type="radio" name="medium" value="medium">Medium<br>
+                    <input type="radio" name="large" value="large">Large<br>
+                    <input type="radio" name="x-large" value="x-large">Extra Large<br>
+
+                    <label for="crust">Choose Your Crust Type here!</label>
+                    <input type="radio" name="thin" value="thin">Thin<br>
+                    <input type="radio" name="deep" value="deep">Deep Dish<br>
+                    <input type="radio" name="garlic" value="garlic">Garlic Parmesan<br>
+
+                    <label for="Toppings">Select Your Toppings Here!</label>
+                    <input type="checkbox" name="pepperoni" value="pepperoni">Pepperoni<br>
+                    <input type="checkbox" name="mushrooms" value="mushrooms">Mushrooms<br>
+                    <input type="checkbox" name="sausage" value="sausage">Italian Sausage<br>
+                    <input type="checkbox" name="ham" value="ham">Ham<br>
+                    <input type="checkbox" name="onion" value="onion">Onion<br>
+                    <input type="checkbox" name="spinach" value="spinach">Spinach<br><br>
+
+                    <input type="submit" name="submit" value="Add to Order"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

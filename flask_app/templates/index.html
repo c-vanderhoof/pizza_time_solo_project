@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <title>Login Or Register</title>
+</head>
+
+<body>
+
+    <div id="log-reg">
+        
+
+        <div id="register">
+            <div id="reg-header"></div>
+            <h2>Register</h2>
+            <form action="/register" method="post">
+
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                <div>
+                    <strong>ERROR</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                <label for="first-name">First Name:</label>
+                <input type="text" name="first_name" id="first_name">
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name">
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address">
+
+                <label for="state">State:</label>
+                <select id="select-state" placeholder="Pick a state...">
+                    <option value="">Select a state...</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+
+                <label for="confirm_pw">Confirm Password:</label>
+                <input type="password" id="confirm_pw" name="confirm_pw">
+
+                <input type="submit" value="Register">
+
+            </form>
+        </div>
+
+        <div id="login">
+
+            <form id="login" action="/login" method="post">
+
+                <h2>Login</h2>
+                {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                <div>
+                    <strong>ERROR</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+
+                <input type="submit" value="Login">
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
